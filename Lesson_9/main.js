@@ -8,8 +8,8 @@ function Animal(name) {
     this.dailyNorm = function(amount) {
         if (!arguments.length) return formatFoodAmount();
 
-        if(foodAmount < 50 || foodAmount > 500) {
-            alert('Ошибка! Введите корректное количество корма!')
+        if (amount < 50 || amount > 500) {
+            return 'Ошибка! Введите корректное количество корма!';
         }
 
         foodAmount = amount;
@@ -45,11 +45,12 @@ function Cat(name) {
 }
 
 var vasya = new Cat ('Вася');
-vasya.stroke().feed().feed();
 
 console.log(vasya.name);
 
 console.log(vasya.dailyNorm(250));
 console.log(vasya.animalFeed());
+
+vasya.stroke().feed().feed();
 
 vasya = null;
